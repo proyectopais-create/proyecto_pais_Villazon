@@ -6,6 +6,7 @@
 <title>Partido Político | Inicio</title>
 
 <style>
+/* RESET */
 *{
   margin:0;
   padding:0;
@@ -13,7 +14,15 @@
   font-family:'Segoe UI',Arial,sans-serif;
 }
 
-body{color:#222;line-height:1.6}
+body{
+  color:#222;
+  line-height:1.6;
+}
+
+/* LOGO */
+.log{
+  width:260px;
+}
 
 /* NAVBAR */
 header{
@@ -24,23 +33,12 @@ header{
 }
 
 .navbar{
-  max-width:1200px;
-  margin:auto;
-  padding:1rem 2rem;
   display:flex;
   justify-content:space-between;
   align-items:center;
-}
-
-.logo-container{
-  display:flex;
-  align-items:center;
-}
-
-.log{
-  width:300px;
-  max-width:100%;
-  height:auto;
+  padding:1rem 2rem;
+  max-width:1200px;
+  margin:auto;
 }
 
 .nav-links{
@@ -55,6 +53,10 @@ header{
   font-weight:500;
 }
 
+.nav-links a:hover{
+  text-decoration:underline;
+}
+
 .hamburger{
   display:none;
   font-size:2rem;
@@ -64,30 +66,28 @@ header{
 
 /* HERO */
 .hero{
-  min-height:80vh;
+  height:80vh;
   background:
-  linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-  url('imagenes/fondo.webp') center/cover no-repeat;
+    linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url('imagenes/fondo.webp');
+  background-size:cover;
+  background-position:center;
   display:flex;
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:2rem 1rem;
   color:#fff;
+  padding:2rem;
 }
 
 .hero h1{
-  font-size:clamp(2rem,4vw,2.6rem);
+  font-size:2.6rem;
   margin-bottom:1rem;
 }
 
 .hero p{
   font-size:1.2rem;
   margin-bottom:2rem;
-}
-
-.hero .btn{
-  margin:.5rem;
 }
 
 /* BOTONES */
@@ -97,6 +97,8 @@ header{
   border-radius:6px;
   text-decoration:none;
   font-weight:bold;
+  margin:.4rem;
+  transition:all .3s ease;
 }
 
 .btn-primary{
@@ -109,10 +111,15 @@ header{
   color:#fff;
 }
 
+.btn:hover{
+  transform:translateY(-4px) scale(1.05);
+  box-shadow:0 10px 20px rgba(0,0,0,.3);
+}
+
 /* VALUES */
 .values{
   background:#f7f7f7;
-  padding:4rem 1rem;
+  padding:4rem 2rem;
 }
 
 .values-container{
@@ -126,20 +133,31 @@ header{
 .value-card{
   background:#fff;
   padding:2rem;
-  border-radius:10px;
   text-align:center;
-  box-shadow:0 4px 10px rgba(0,0,0,.08);
+  border-radius:12px;
+  box-shadow:0 6px 16px rgba(0,0,0,.12);
+  transition:transform .3s ease;
+}
+
+.value-card:hover{
+  transform:translateY(-6px);
 }
 
 /* CANDIDATES */
 .candidates{
-  padding:4rem 1rem;
+  padding:4rem 2rem;
   text-align:center;
 }
 
+.section-title{
+  margin:3rem 0 2rem;
+  font-size:2.2rem;
+  color:#0b3c5d;
+}
+
 .alcalde-container{
-  max-width:320px;
-  margin:0 auto 3rem;
+  max-width:400px;
+  margin:0 auto 4rem;
 }
 
 .concejales-grid{
@@ -148,28 +166,33 @@ header{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:2rem;
-  padding:0 1rem 4rem;
 }
 
 .candidate-card{
   background:#fff;
-  border-radius:10px;
+  border-radius:14px;
   overflow:hidden;
-  box-shadow:0 4px 10px rgba(0,0,0,.08);
+  box-shadow:0 6px 18px rgba(0,0,0,.15);
+  transition:all .3s ease;
+}
+
+.candidate-card:hover{
+  transform:translateY(-8px) scale(1.03);
+  box-shadow:0 15px 30px rgba(0,0,0,.25);
 }
 
 .candidate-card img{
   width:100%;
-  height:280px;
+  height:300px;
   object-fit:cover;
 }
 
 .candidate-card h3{
-  margin:1rem 0 .5rem;
+  margin:1rem 0 .3rem;
 }
 
 .candidate-card p{
-  padding-bottom:1.5rem;
+  margin-bottom:1.5rem;
   color:#555;
 }
 
@@ -177,7 +200,7 @@ header{
 .cta{
   background:#0b3c5d;
   color:#fff;
-  padding:4rem 1rem;
+  padding:4rem 2rem;
   text-align:center;
 }
 
@@ -188,7 +211,7 @@ header{
   background:#fff;
   padding:2rem;
   border-radius:12px;
-  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  box-shadow:0 8px 20px rgba(0,0,0,.2);
   color:#222;
 }
 
@@ -198,9 +221,9 @@ header{
 }
 
 .form-group label{
-  display:block;
   font-weight:600;
-  margin-bottom:.4rem;
+  margin-bottom:.3rem;
+  display:block;
 }
 
 .form-group input,
@@ -209,12 +232,6 @@ header{
   padding:.7rem;
   border-radius:6px;
   border:1px solid #ccc;
-  font-size:1rem;
-}
-
-.proposal-form button{
-  width:100%;
-  margin-top:1rem;
 }
 
 /* POPUP */
@@ -230,15 +247,10 @@ header{
 
 .popup-content{
   background:#fff;
-  padding:2rem 2.5rem;
-  border-radius:12px;
+  padding:2rem;
+  border-radius:14px;
   text-align:center;
   max-width:400px;
-}
-
-.popup-content h3{
-  color:#0b3c5d;
-  margin-bottom:.8rem;
 }
 
 /* FOOTER */
@@ -247,121 +259,32 @@ footer{
   color:#aaa;
   text-align:center;
   padding:1.2rem;
-  font-size:.9rem;
 }
 
-.btn{
-  display:inline-block;
-  padding:.9rem 1.6rem;
-  border-radius:6px;
-  text-decoration:none;
-  font-weight:bold;
-  transition:
-    transform .25s ease,
-    box-shadow .25s ease,
-    background-color .25s ease,
-    color .25s ease;
-  cursor:pointer;
-}
-
-/* Hover general */
-.btn:hover{
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 10px 20px rgba(0,0,0,.25);
-}
-
-/* Click */
-.btn:active{
-  transform: translateY(-1px) scale(0.98);
-  box-shadow: 0 5px 10px rgba(0,0,0,.2);
-}
-
-/* Botón primario */
-.btn-primary:hover{
-  background:#cc0000;
-}
-
-/* Botón secundario */
-.btn-secondary:hover{
-  background:#ffffff;
-  color:#0b3c5d;
-}
-
-
-/* RESPONSIVE MENU */
+/* RESPONSIVE */
 @media(max-width:768px){
-  .log{
-    width:180px;
-  }
-
   .nav-links{
     position:absolute;
-    top:100%;
+    top:70px;
     right:0;
-    background:#ff0000;
+    background:#0b3c5d;
     width:100%;
     flex-direction:column;
     display:none;
     padding:1.5rem 0;
   }
 
-  .nav-links.active{display:flex}
-  .nav-links li{text-align:center;margin:.8rem 0}
-  .hamburger{display:block}
-}
-
-
-
-@media(max-width:600px){
-  .hero div{
+  .nav-links.active{
     display:flex;
-    flex-direction:column;
-    gap:1rem;
-  }
-  .hero .btn{
-    width:100%;
-    margin:0;
-  }
-}
-
-/* ===== TEXTOS RESPONSIVE ===== */
-@media (max-width:768px){
-
-  body{font-size:15px}
-
-  h1{
-    font-size:1.8rem;
-    line-height:1.2;
   }
 
-  h2{
-    font-size:1.5rem;
-    margin-bottom:1rem;
+  .hamburger{
+    display:block;
   }
 
-  h3{font-size:1.1rem}
-
-  p{
-    font-size:.95rem;
-    line-height:1.5;
+  .hero h1{
+    font-size:2rem;
   }
-
-  .hero h1{font-size:1.7rem}
-  .hero p{font-size:.95rem}
-
-  .candidate-card h3{font-size:1rem}
-  .candidate-card p{font-size:.85rem}
-
-  .proposal-form{padding:1.5rem}
-
-  .form-group label{font-size:.85rem}
-  .form-group input,
-  .form-group textarea{font-size:.9rem}
-}
-
-@media (max-width:360px){
-  h1{font-size:1.6rem}
-  h2{font-size:1.35rem}
 }
 </style>
 </head>
@@ -370,45 +293,52 @@ footer{
 
 <header>
 <nav class="navbar">
-  <div class="logo-container">
-    <img class="log" src="imagenes/logo-blanco.svg" alt="Alianza Proyecto País">
-  </div>
-
+  <img class="log" src="imagenes/logo-blanco.svg">
   <ul class="nav-links" id="navLinks">
     <li><a href="#">Inicio</a></li>
     <li><a href="#">El Partido</a></li>
-    <li><a href="#">Candidatos</a></li>
+    <li><a href="#candidatos">Candidatos</a></li>
     <li><a href="#participa">Propuestas</a></li>
   </ul>
-
   <div class="hamburger" id="hamburger">☰</div>
 </nav>
 </header>
 
 <section class="hero">
-<div>
-  <h1>Un futuro mejor para nuestra ciudad</h1>
-  <p>Transparencia, desarrollo y participación ciudadana</p>
-  <a href="#" class="btn btn-primary">Ver propuestas</a>
-  <a href="#participa" class="btn btn-secondary">Participa</a>
-</div>
+  <div>
+    <h1>Un futuro mejor para nuestra ciudad</h1>
+    <p>Transparencia, desarrollo y participación ciudadana</p>
+    <a class="btn btn-primary">Ver propuestas</a>
+    <a class="btn btn-secondary">Participa</a>
+  </div>
 </section>
 
 <section class="values">
 <div class="values-container">
-  <div class="value-card">
-    <h3>Transparencia</h3>
-    <p>Gobernar con honestidad y rendición de cuentas.</p>
-  </div>
-  <div class="value-card">
-    <h3>Desarrollo</h3>
-    <p>Impulsar el crecimiento económico y social.</p>
-  </div>
-  <div class="value-card">
-    <h3>Participación</h3>
-    <p>La ciudadanía como eje central.</p>
+  <div class="value-card"><h3>Transparencia</h3><p>Gobierno honesto.</p></div>
+  <div class="value-card"><h3>Desarrollo</h3><p>Crecimiento social.</p></div>
+  <div class="value-card"><h3>Participación</h3><p>Ciudadanía activa.</p></div>
+</div>
+</section>
+
+<section class="candidates" id="candidatos">
+
+<h2 class="section-title">ALCALDE</h2>
+<div class="alcalde-container">
+  <div class="candidate-card">
+    <img src="imagenes/alcalde.webp">
+    <h3>Nombre del Candidato</h3>
+    <p>Candidato a la Alcaldía</p>
   </div>
 </div>
+
+<h2 class="section-title">CONCEJALES</h2>
+<div class="concejales-grid">
+  <div class="candidate-card"><img src="imagenes/concejal1.webp"><h3>Concejal</h3><p>Zona</p></div>
+  <div class="candidate-card"><img src="imagenes/concejal2.webp"><h3>Concejal</h3><p>Zona</p></div>
+  <div class="candidate-card"><img src="imagenes/concejal3.webp"><h3>Concejal</h3><p>Zona</p></div>
+</div>
+
 </section>
 
 <section class="cta" id="participa">
@@ -416,66 +346,60 @@ footer{
 <p>Participa y ayúdanos a construir el futuro</p>
 
 <form class="proposal-form" id="proposalForm">
-  <div class="form-group">
-    <label>Nombre completo</label>
-    <input name="nombre" required>
-  </div>
-
-  <div class="form-group">
-    <label>Barrio</label>
-    <input name="barrio" required>
-  </div>
-
-  <div class="form-group">
-    <label>Celular</label>
-    <input name="celular" required>
-  </div>
-
-  <div class="form-group">
-    <label>Correo electrónico</label>
-    <input type="email" name="correo" required>
-  </div>
-
-  <div class="form-group">
-    <label>Tu propuesta</label>
-    <textarea name="propuesta" rows="4" required></textarea>
-  </div>
-
+  <div class="form-group"><label>Nombre</label><input required></div>
+  <div class="form-group"><label>Barrio</label><input required></div>
+  <div class="form-group"><label>Celular</label><input required></div>
+  <div class="form-group"><label>Correo (opcional)</label><input type="email"></div>
+  <div class="form-group"><label>Propuesta</label><textarea required></textarea></div>
   <button class="btn btn-primary">Enviar propuesta</button>
 </form>
 </section>
 
-<footer>
-© 2025 Partido Político | Todos los derechos reservados
-</footer>
+<footer>© 2025 Partido Político</footer>
 
 <div class="thank-you-popup" id="thankYouPopup">
-<div class="popup-content">
-  <h3>¡Gracias por tu apoyo!</h3>
-  <p>Tu propuesta ha sido enviada correctamente.</p>
-</div>
+  <div class="popup-content">
+    <h3>¡Gracias por tu apoyo!</h3>
+    <p>Tu propuesta fue enviada correctamente.</p>
+  </div>
 </div>
 
 <script>
-const hamburger=document.getElementById('hamburger');
-const navLinks=document.getElementById('navLinks');
-hamburger.onclick=()=>navLinks.classList.toggle('active');
+const form = document.getElementById('proposalForm');
+const popup = document.getElementById('thankYouPopup');
 
-const form=document.getElementById('proposalForm');
-const popup=document.getElementById('thankYouPopup');
-
-form.addEventListener('submit',e=>{
+form.addEventListener('submit', async function (e) {
   e.preventDefault();
-  fetch('https://hook.eu1.make.com/4535p36b7lkyxar64ykwhg1qqsfywtez',{
-    method:'POST',
-    body:new FormData(form)
-  }).then(()=>{
-    popup.style.display='flex';
-    form.reset();
-    setTimeout(()=>popup.style.display='none',5000);
-  });
+
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(
+      "https://hook.eu1.make.com/4535p36b7lkyxar64ykwhg1qqsfywtez",
+      {
+        method: "POST",
+        body: formData
+      }
+    );
+
+    if (response.ok) {
+      popup.style.display = "flex";
+
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 5000);
+
+      form.reset();
+    } else {
+      alert("Error al enviar la propuesta. Intente nuevamente.");
+    }
+
+  } catch (error) {
+    alert("No se pudo conectar. Revise su conexión.");
+  }
 });
 </script>
+
 
 </body>
 </html>
