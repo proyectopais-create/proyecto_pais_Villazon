@@ -263,7 +263,11 @@ footer{
 
 /* RESPONSIVE */
 @media(max-width:768px){
- 
+    .log{
+        width: 190px;
+    }
+
+
   .nav-links a {
     padding: 0.8rem 0;
     display: block;
@@ -355,11 +359,30 @@ footer{
 <p>Participa y ayúdanos a construir el futuro</p>
 
 <form class="proposal-form" id="proposalForm">
-  <div class="form-group"><label>Nombre</label><input required></div>
-  <div class="form-group"><label>Barrio</label><input required></div>
-  <div class="form-group"><label>Celular</label><input required></div>
-  <div class="form-group"><label>Correo (opcional)</label><input type="email"></div>
-  <div class="form-group"><label>Propuesta</label><textarea required></textarea></div>
+   <div class="form-group">
+    <label>Nombre</label>
+    <input name="nombre" required>
+  </div>
+
+  <div class="form-group">
+    <label>Barrio</label>
+    <input name="barrio" required>
+  </div>
+
+  <div class="form-group">
+    <label>Celular</label>
+    <input name="celular" required>
+  </div>
+
+  <div class="form-group">
+    <label>Correo (opcional)</label>
+    <input type="email" name="correo">
+  </div>
+
+  <div class="form-group">
+    <label>Propuesta</label>
+    <textarea name="propuesta" required></textarea>
+  </div>
   <button class="btn btn-primary">Enviar propuesta</button>
 </form>
 </section>
