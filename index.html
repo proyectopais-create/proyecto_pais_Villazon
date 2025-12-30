@@ -263,20 +263,29 @@ footer{
 
 /* RESPONSIVE */
 @media(max-width:768px){
-  .nav-links{
+ 
+  .nav-links a {
+    padding: 0.8rem 0;
+    display: block;
+    font-size: 1.1rem;
+  }
+    .nav-links{
     position:absolute;
     top:70px;
-    right:0;
-    background:#0b3c5d;
+    z-index: 1500;
+    left:0;
+    background:#ff0000;
     width:100%;
     flex-direction:column;
     display:none;
     padding:1.5rem 0;
+    text-align: center;
   }
 
   .nav-links.active{
     display:flex;
   }
+
 
   .hamburger{
     display:block;
@@ -400,6 +409,14 @@ form.addEventListener('submit', async function (e) {
 });
 </script>
 
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+</script>
 
 </body>
 </html>
