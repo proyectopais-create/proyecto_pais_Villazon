@@ -166,6 +166,7 @@ header{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
   gap:2rem;
+  margin: 30px;
 }
 
 .candidate-card{
@@ -295,10 +296,70 @@ footer{
     display:block;
   }
 
+  .hero{
+     min-height: 60vh;           /* más compacto */
+    padding: 2.5rem 1.2rem;
+    background-position: center top;
+  }
+
   .hero h1{
     font-size:2rem;
   }
+
+   
 }
+@media (max-width: 768px) {
+
+  /* ====== VALUES ====== */
+  .values-container {
+    grid-template-columns: 1fr; /* 1 tarjeta por fila */
+    gap: 1rem;
+  }
+
+  .value-card {
+    padding: 1.2rem;
+  }
+
+  .value-card h3 {
+    font-size: 1.15rem;
+  }
+
+  .value-card p {
+    font-size: 0.9rem;
+  }
+
+  /* ====== CANDIDATOS ====== */
+  .alcalde-container {
+    max-width: 200px;
+  }
+
+  .concejales-grid {
+    grid-template-columns: 1fr; /* 1 tarjeta */
+    justify-items: center;     /* CENTRA la card */
+    gap: 1rem;
+    margin: 30px;
+  }
+
+  .candidate-card {
+    border-radius: 10px;
+    max-width: 200px;
+  }
+
+  .candidate-card img {
+    height: 180px; /* ↓ MUCHO más pequeño */
+  }
+
+  .candidate-card h3 {
+    font-size: 1rem;
+    margin: .6rem 0 .2rem;
+  }
+
+  .candidate-card p {
+    font-size: 0.85rem;
+    margin-bottom: .8rem;
+  }
+}
+
 </style>
 </head>
 
@@ -359,7 +420,7 @@ footer{
 
 
 <section class="candidates" id="candidatos">
-<h1 class="section-title">PERFIL CANDIDATOS</h1>
+<h1 >PERFIL CANDIDATOS</h1>
 <h2 class="section-title">ALCALDE</h2>
 <div class="alcalde-container">
   <div class="candidate-card">
