@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Perfil del Candidato</title>
+
+<style>
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+
+body{
+  color:#222;
+  line-height:1.6;
+}
+
+/* ===== NAVBAR ===== */
+header{
+  background:#ff0000;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 2rem;
+  max-width:1200px;
+  margin:auto;
+}
+
+.log{
+  width:240px;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:1.5rem;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.hamburger{
+  display:none;
+  font-size:2rem;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* ===== TITULO ===== */
+.page-title{
+  text-align:center;
+  padding:3rem 1rem 2rem;
+}
+
+.page-title h1{
+  font-size:2.4rem;
+  color:#0b3c5d;
+}
+
+/* ===== PERFIL ===== */
+.profile-section{
+  max-width:1200px;
+  margin:auto;
+  padding:2rem;
+}
+
+.profile-card{
+  display:flex;
+  gap:2.5rem;
+  background:#fff;
+  border-radius:16px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  padding:2.5rem;
+}
+
+/* FOTO */
+.profile-photo{
+  flex:0 0 280px;
+}
+
+.profile-photo img{
+  width:100%;
+  border-radius:14px;
+  object-fit:cover;
+}
+
+/* DATOS */
+.profile-info{
+  flex:1;
+}
+
+.profile-info h2{
+  font-size:2rem;
+  margin-bottom:.5rem;
+}
+
+.profile-info .role{
+  color:#ff0000;
+  font-weight:600;
+  margin-bottom:1.2rem;
+}
+
+.profile-info ul{
+  list-style:none;
+}
+
+.profile-info li{
+  margin-bottom:.6rem;
+}
+
+.profile-info strong{
+  color:#0b3c5d;
+}
+
+/* REDES */
+.socials{
+  margin-top:1.2rem;
+}
+
+.socials a{
+  display:inline-block;
+  margin-right:.6rem;
+  color:#ff0000;
+  font-weight:600;
+  text-decoration:none;
+}
+
+/* ===== SECCIONES ===== */
+.section{
+  max-width:1200px;
+  margin:3rem auto;
+  padding:0 2rem;
+}
+
+.section h3{
+  font-size:1.8rem;
+  margin-bottom:1.5rem;
+  color:#0b3c5d;
+}
+
+/* LISTAS */
+.section ul{
+  list-style:none;
+}
+
+.section li{
+  background:#f7f7f7;
+  padding:1.2rem;
+  border-radius:10px;
+  margin-bottom:1rem;
+}
+
+/* ===== GALERIA ===== */
+.gallery{
+  display:flex;
+  gap:1rem;
+  overflow-x:auto;
+  padding-bottom:1rem;
+}
+
+.gallery img{
+  height:200px;
+  border-radius:12px;
+  flex-shrink:0;
+  object-fit:cover;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:#1b1b1b;
+  color:#aaa;
+  text-align:center;
+  padding:1.2rem;
+  margin-top:4rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+
+  .log{
+    width:180px;
+  }
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#ff0000;
+    flex-direction:column;
+    display:none;
+    text-align:center;
+    padding:1.5rem 0;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .hamburger{
+    display:block;
+  }
+
+  .profile-card{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .profile-photo{
+    max-width:220px;
+    margin:auto;
+  }
+
+  .gallery img{
+    height:160px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+<nav class="navbar">
+  <img src="imagenes/logo-blanco.svg" class="log">
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="#">Candidatos</a></li>
+    <li><a href="#">Propuestas</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger">☰</div>
+</nav>
+</header>
+
+<!-- TITULO -->
+<div class="page-title">
+  <h1>PERFIL CANDIDATO</h1>
+</div>
+
+<!-- PERFIL -->
+<section class="profile-section">
+  <div class="profile-card">
+
+    <div class="profile-photo">
+      <img src="imagenes/candidatos/Angel robles.png" alt="Candidato">
+    </div>
+
+    <div class="profile-info">
+      <h2>Prof. Ángel Robles</h2>
+      <div class="role">Candidato a la Alcaldía</div>
+
+      <ul>
+        <li><strong>Correo:</strong> angel.robles@email.com</li>
+        <li><strong>Profesión:</strong> Licenciado en Educación</li>
+        <li><strong>Estado civil:</strong> Casado</li>
+        <li><strong>Ciudad:</strong> Villazón</li>
+      </ul>
+
+      <div class="socials">
+        <a href="#">Facebook</a>
+        <a href="#">Instagram</a>
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FORMACION -->
+<section class="section">
+  <h3>Formación Académica (DATOS NO OFICIAL - DATOS COLOCADOS CON FINES DE PRUEBAS DE LA PAGINA WEB)</h3>
+  <ul>
+    <li>Licenciatura en Ciencias de la Educación – Universidad Pública</li>
+    <li>Diplomado en Gestión Pública Municipal</li>
+    <li>Capacitación en Liderazgo y Políticas Públicas</li>
+  </ul>
+</section>
+
+<!-- EXPERIENCIA -->
+<section class="section">
+  <h3>Experiencia Laboral</h3>
+  <ul>
+    <li>Director de Unidad Educativa (2015 – 2020)</li>
+    <li>Asesor Educativo Municipal (2020 – 2023)</li>
+    <li>Gestor de Proyectos Sociales y Comunitarios</li>
+  </ul>
+</section>
+
+<!-- GALERIA -->
+<section class="section">
+  <h3>Galería de Actividades</h3>
+  <div class="gallery">
+    <img src="imagenes/galeria/1.webp">
+    <img src="imagenes/galeria/2.webp">
+    <img src="imagenes/galeria/3.webp">
+    <img src="imagenes/galeria/4.webp">
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2025 Partido Político | Todos los derechos reservados
+</footer>
+
+<script>
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+
+hamburger.addEventListener('click',()=>{
+  navLinks.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
