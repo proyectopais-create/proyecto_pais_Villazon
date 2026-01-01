@@ -119,7 +119,7 @@ header{
 /* VALUES */
 .values{
   background:#f7f7f7;
-  padding:4rem 2rem;
+  padding:2rem 2rem;
 }
 
 .values-container{
@@ -145,7 +145,7 @@ header{
 
 /* CANDIDATES */
 .candidates{
-  padding:4rem 2rem;
+  padding:2srem 2rem;
   text-align:center;
 }
 
@@ -156,12 +156,12 @@ header{
 }
 
 .alcalde-container{
-  max-width:400px;
+  max-width:350px;
   margin:0 auto 4rem;
 }
 
 .concejales-grid{
-  max-width:1200px;
+  max-width:1300px;
   margin:auto;
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -322,34 +322,60 @@ footer{
     <h1>Un futuro mejor para nuestra ciudad</h1>
     <p>Transparencia, desarrollo y participación ciudadana</p>
     <a class="btn btn-primary">Ver propuestas</a>
-    <a class="btn btn-secondary" href="#participa">Participa</a>
+    <a class="btn btn-secondary">Participa</a>
   </div>
 </section>
 
 <section class="values">
-<div class="values-container">
-  <div class="value-card"><h3>Transparencia</h3><p>Gobierno honesto.</p></div>
-  <div class="value-card"><h3>Desarrollo</h3><p>Crecimiento social.</p></div>
-  <div class="value-card"><h3>Participación</h3><p>Ciudadanía activa.</p></div>
-</div>
+  <div class="values-container">
+    <div class="value-card">
+      <h3>SALUD</h3>
+      <p>
+        Fortalecer el sistema de salud municipal garantizando
+        atención médica digna, oportuna y de calidad, con
+        infraestructura adecuada, medicamentos y personal capacitado.
+      </p>
+    </div>
+
+    <div class="value-card">
+      <h3>EDUCACIÓN</h3>
+      <p>
+        Impulsar una educación moderna e inclusiva mediante
+        mejores condiciones en las unidades educativas,
+        apoyo a docentes y acceso a tecnología para niños y jóvenes.
+      </p>
+    </div>
+
+    <div class="value-card">
+      <h3>DEPORTE</h3>
+      <p>
+        Promover el deporte y la actividad física como herramientas
+        de integración social, prevención y desarrollo,
+        fortaleciendo espacios deportivos y programas juveniles.
+      </p>
+    </div>
+  </div>
 </section>
 
-<section class="candidates" id="candidatos">
 
+<section class="candidates" id="candidatos">
+<h1 class="section-title">PERFIL CANDIDATOS</h1>
 <h2 class="section-title">ALCALDE</h2>
 <div class="alcalde-container">
   <div class="candidate-card">
-    <img src="imagenes/alcalde.webp">
+    <img src="imagenes/candidatos/Angel robles.png">
     <h3>Prof. Angel Robles</h3>
-    <p>Candidato a la Alcaldía 2026-2031</p>
+    <p>Candidato a la Alcaldía</p>
   </div>
 </div>
 
 <h2 class="section-title">CONCEJALES</h2>
 <div class="concejales-grid">
-  <div class="candidate-card"><img src="imagenes/concejal1.webp"><h3>Concejal</h3><p>Titular</p></div>
-  <div class="candidate-card"><img src="imagenes/concejal2.webp"><h3>Concejal</h3><p>Titular</p></div>
-  <div class="candidate-card"><img src="imagenes/concejal3.webp"><h3>Concejal</h3><p>Titular</p></div>
+  <div class="candidate-card"><img src="imagenes/candidatos/Alicia.png"><h3>Concejal</h3><p>Titular</p></div>
+  <div class="candidate-card"><img src="imagenes/candidatos/Deysi.png"><h3>Concejal</h3><p>Titular</p></div>
+  <div class="candidate-card"><img src="imagenes/candidatos/Nilda.png"><h3>Concejal</h3><p>Titular</p></div>
+  <div class="candidate-card"><img src="imagenes/candidatos/Juan Carlos.png"><h3>Concejal</h3><p>Titular</p></div>
+  <div class="candidate-card"><img src="imagenes/candidatos/Luis.png"><h3>Concejal</h3><p>Titular</p></div>
 </div>
 
 </section>
@@ -443,5 +469,3 @@ hamburger.addEventListener('click', () => {
 
 </body>
 </html>
-
-
