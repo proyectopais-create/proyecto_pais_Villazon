@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Partido Político | Propuestas</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',Arial,sans-serif;
+}
+
+body{
+  color:#222;
+  line-height:1.6;
+}
+
+/* LOGO */
+.log{
+  width:260px;
+}
+
+/* NAVBAR */
+header{
+  background:#ff0000;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 2rem;
+  max-width:1200px;
+  margin:auto;
+}
+
+.nav-links{
+  list-style:none;
+  display:flex;
+  gap:1.5rem;
+}
+
+.nav-links a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.hamburger{
+  display:none;
+  font-size:2rem;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* ===== PROPUESTAS ===== */
+.propuestas{
+  max-width:1200px;
+  margin:3rem auto;
+  padding:0 2rem;
+}
+
+.propuestas h2{
+  text-align:center;
+  font-size:2.4rem;
+  margin-bottom:3rem;
+  color:#0b3c5d;
+}
+
+/* CARD */
+.propuesta-card{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:2rem;
+  background:#fff;
+  padding:2rem;
+  border-radius:14px;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  margin-bottom:2.5rem;
+}
+
+/* TITULO DENTRO DEL CARD */
+.propuesta-titulo{
+  grid-column:1 / -1;
+  text-align:center;
+  font-size:1.5rem;
+  color:#0b3c5d;
+  margin-bottom:1rem;
+}
+
+/* IMAGEN */
+.propuesta-card img{
+  width: 100%;
+  border-radius:12px;
+  object-fit:cover;
+}
+
+/* VIDEO DRIVE */
+.video-container{
+  width:100%;
+  aspect-ratio:16/9;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.video-container iframe{
+  width:100%;
+  height:100%;
+  border:0;
+}
+
+/* INFO */
+.propuesta-info p{
+  color:#555;
+}
+
+/* INFO EXTRA */
+.info-extra{
+  display:none;
+  margin-top:1rem;
+  background:#f3f3f3;
+  padding:1rem;
+  border-radius:8px;
+  color:#333;
+}
+
+/* BOTONES */
+.btn{
+  display:inline-block;
+  padding:.8rem 1.5rem;
+  border-radius:6px;
+  font-weight:bold;
+  margin-top:1rem;
+  background:#ff0000;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
+
+/* FORM */
+.cta{
+  background:#0b3c5d;
+  color:#fff;
+  padding:4rem 2rem;
+  text-align:center;
+}
+
+.proposal-form{
+  max-width:600px;
+  margin:2rem auto 0;
+  background:#fff;
+  padding:2rem;
+  border-radius:12px;
+  box-shadow:0 8px 20px rgba(0,0,0,.2);
+  color:#222;
+}
+
+.form-group{
+  margin-bottom:1.2rem;
+  text-align:left;
+}
+
+.form-group label{
+  font-weight:600;
+  display:block;
+}
+
+.form-group input,
+.form-group textarea{
+  width:100%;
+  padding:.7rem;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+/* FOOTER */
+footer{
+  background:#1b1b1b;
+  color:#aaa;
+  text-align:center;
+  padding:1.2rem;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .log{ width:190px; }
+
+  .nav-links{
+    position:absolute;
+    top:70px;
+    left:0;
+    background:#ff0000;
+    width:100%;
+    flex-direction:column;
+    display:none;
+    text-align:center;
+  }
+
+  .nav-links.active{
+    display:flex;
+  }
+
+  .hamburger{
+    display:block;
+  }
+
+  .propuesta-card{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav class="navbar">
+  <img class="log" src="imagenes/logo-blanco.svg">
+  <ul class="nav-links" id="navLinks">
+    <li><a href="index.html">Inicio</a></li>
+    <li><a href="#propuestas">Propuestas</a></li>
+    <li><a href="#participa">Participa</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger">☰</div>
+</nav>
+</header>
+
+<!-- ===== PROPUESTAS ===== -->
+<section class="propuestas" id="propuestas">
+  <h2>Nuestras Propuestas</h2>
+
+  <div class="propuesta-card">
+    <h3 class="propuesta-titulo">AGUA POTABLE CALIDAD 24/7</h3>
+    <div>
+      <!-- Si quieres VIDEO de Drive, usa esto -->
+      <!--
+      <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/ID_DEL_VIDEO/preview" allowfullscreen></iframe>
+      </div>
+      -->
+      <!-- Imagen -->
+      <img src="imagenes/propuesta 1.png">
+    </div>
+    <div class="propuesta-info">
+      <p>
+        <b>Antecedente: </b> Actualmente, en épocas de lluvia, la captación de agua superficial genera una alta turbidez que obliga al racionamiento para evitar daños en equipos y riesgos sanitarios. <br>
+        <b>Propuesta:</b>Implementar un sistema de pretratamiento con filtros de arena y automatización en los sistemas Mojo y Toroara para garantizar agua limpia sin cortes. <br>
+        <b>Dato Clave:</b> Aumento de la capacidad de almacenamiento en un 50% y monitoreo digital con sensores en línea. <br>
+      </p>
+      <button class="btn" onclick="toggleInfo(this)">Ver más</button>
+      <div class="info-extra">
+        <strong>Alcance Técnico:</strong><br>
+        Pavimentación reforzada para tránsito pesado, drenaje pluvial,
+        alumbrado LED cada 25 m.<br><br>
+        <strong>Impacto:</strong><br>
+        Reducción del tráfico pesado en el centro urbano,
+        mejora de seguridad vial, generación de empleo
+        y aumento de la plusvalía barrial.
+      </div>
+    </div>
+  </div>
+<!-- PROPUESTA 2 -->
+<div class="propuesta-card">
+    <h3 class="propuesta-titulo">SANEAMIENTO INTEGRAL (URBANO Y RURAL)</h3>
+    <div>
+      <!-- Si quieres VIDEO de Drive, usa esto -->
+      <!--
+      <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/ID_DEL_VIDEO/preview" allowfullscreen></iframe>
+      </div>
+      -->
+      <!-- Imagen -->
+      <img src="imagenes/propuesta 1.png">
+    </div>
+    <div class="propuesta-info">
+      <p>
+      <b>Antecedente: </b> La red actual en la ciudad presenta deficiencias y filtraciones, mientras que en el área rural la falta de alcantarillado aumenta los riesgos de enfermedades. <br>
+      <b>Propuesta:</b> Renovación de 10 km de alcantarillado antiguo y ampliación de 15 km en distritos periféricos y comunidades rurales concentradas. <br>
+      <b>Impacto: </b> Cobertura del 80% en la ciudad y 90% en el área rural, cumpliendo con normas ambientales bolivianas. <br>
+      <b>Beneficio:</b> Reducción de enfermedades diarreicas en un 40-60% y eliminación de contaminación en ríos fronterizos. <br>
+      </p>
+      <button class="btn" onclick="toggleInfo(this)">Ver más</button>
+      <div class="info-extra">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPUESTA 3 -->
+  <div class="propuesta-card">
+    <h3 class="propuesta-titulo">CENTRO DE ALTO RENDIMIENTO (CAR)</h3>
+    <div>
+      <!-- Si quieres VIDEO de Drive, usa esto -->
+      <!--
+      <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/ID_DEL_VIDEO/preview" allowfullscreen></iframe>
+      </div>
+      -->
+      <!-- Imagen -->
+      <img src="imagenes/propuestas/av_circunvalacion.png">
+    </div>
+    <div class="propuesta-info">
+      <p>
+      <b>Antecedente: </b> Existe una falta de infraestructura deportiva reglamentaria para la alta competencia y un evidente deterioro en las canchas de uso múltiple en los barrios. <br>
+      <b>Propuesta:</b> Construcción de un Estadio Municipal, un Coliseo con cancha de Futsal reglamentaria y la refacción total de los complejos deportivos barriales. <br>
+      <b>Impacto: </b> Mejora de canchas de básquetbol y futsal con iluminación profesional y superficies de juego renovadas en todos los distritos. <br>
+      <b>Beneficio:</b> Fomentar el talento local, promover la vida sana y posicionar a Villazón como sede de eventos deportivos nacionales. <br>
+      </p>
+      <button class="btn" onclick="toggleInfo(this)">Ver más</button>
+      <div class="info-extra">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPUESTA 4 -->
+  <div class="propuesta-card">
+    <h3 class="propuesta-titulo">SEGURIDAD CON ILUMINACION LED</h3>
+    <div>
+      <!-- Si quieres VIDEO de Drive, usa esto -->
+      <!--
+      <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/ID_DEL_VIDEO/preview" allowfullscreen></iframe>
+      </div>
+      -->
+      <!-- Imagen -->
+      <img src="imagenes/propuestas/av_circunvalacion.png">
+    </div>
+    <div class="propuesta-info">
+      <p>
+      <b>Antecedente: </b> Villazón enfrenta desafíos de seguridad nocturna debido a una infraestructura de alumbrado insuficiente en avenidas y espacios públicos. <br>
+      <b>Propuesta:</b> Instalación de luminarias LED inteligentes en 20 km de calles prioritarias, como la Av. Panamericana y Los Álamos. <br>
+      <b>Impacto: </b> Reducción del 30% en delitos y accidentes durante el primer año de operación <br>
+      <b>Eficiencia:</b> Ahorro energético proyectado de hasta el 72.8% comparado con sistemas convencionales. <br>
+      </p>
+      <button class="btn" onclick="toggleInfo(this)">Ver más</button>
+      <div class="info-extra">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPUESTA 5 -->
+  <div class="propuesta-card">
+    <h3 class="propuesta-titulo">PRODUCCION E INDUSTRALIZACION LOCAL</h3>
+    <div>
+      <!-- Si quieres VIDEO de Drive, usa esto -->
+      <!--
+      <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/ID_DEL_VIDEO/preview" allowfullscreen></iframe>
+      </div>
+      -->
+      <!-- Imagen -->
+      <img src="imagenes/propuestas/av_circunvalacion.png">
+    </div>
+    <div class="propuesta-info">
+      <p>
+      <b>Antecedente: </b> La economía local depende de la venta de materia prima sin procesar, lo que limita los ingresos de los productores de semillas, frutas y ganado. <br>
+      <b>Propuesta:</b> Fomento al desarrollo productivo sostenible mediante la industrialización de materia prima y el acceso a mercados nacionales.<br>
+      <b>Impacto: </b> Generación de 500 empleos directos en 2 años y aumento del 30% en los ingresos de las familias rurales. <br>
+      <b>Beneficio:</b> Apoyo técnico en semillas certificadas, fruticultura, ganadería, alfarería y artesanías. <br>
+      </p>
+      <button class="btn" onclick="toggleInfo(this)">Ver más</button>
+      <div class="info-extra">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPUESTA 6 -->
+  <div class="propuesta-card">
+    <h3 class="propuesta-titulo">RIEGO SOLAR TECNIFICADO</h3>
+    <div>
+      <!-- Si quieres VIDEO de Drive, usa esto -->
+      <!--
+      <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/ID_DEL_VIDEO/preview" allowfullscreen></iframe>
+      </div>
+      -->
+      <!-- Imagen -->
+      <img src="imagenes/propuestas/av_circunvalacion.png">
+    </div>
+    <div class="propuesta-info">
+      <p>
+      <b>Antecedente: </b> La provincia Modesto Omiste enfrenta una degradación crítica de suelos debido a sequías y erosión, limitando seriamente la producción agrícola. <br>
+      <b>Propuesta:</b> Implementar sistemas de riego por goteo o aspersión impulsados por bombeo con energía renovable (solar y eólica).<br>
+      <b>Impacto: </b> Recuperación de 50 a 100 hectáreas de suelos fértiles, beneficiando directamente a 200 familias productoras. <br>
+      <b>Inversion:</b> Bs 3.3 millones financiados prioritariamente por la Gobernación de Potosí. <br>
+      </p>
+      <button class="btn" onclick="toggleInfo(this)">Ver más</button>
+      <div class="info-extra">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPUESTA 7 -->
+  <div class="propuesta-card">
+    <h3 class="propuesta-titulo">GRAN AVENIDA CIRCUNVALACION</h3>
+    <div>
+      <!-- Si quieres VIDEO de Drive, usa esto -->
+      <!--
+      <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/ID_DEL_VIDEO/preview" allowfullscreen></iframe>
+      </div>
+      -->
+      <!-- Imagen -->
+      <img src="imagenes/propuestas/av_circunvalacion.png">
+    </div>
+    <div class="propuesta-info">
+      <p>
+      <b>Antecedente: </b> Villazón padece una congestión vial crónica por el paso de transporte pesado, lo que afecta el comercio y deteriora las calles del centro. <br>
+      <b>Propuesta:</b> Construcción de una avenida de 12 km con 4 carriles e iluminación LED que rodeará la ciudad desviando camiones y vehículos de paso.<br>
+      <b>Impacto: </b> Reducción del 30% en tiempos de traslado y creación de 500 empleos directos durante su ejecución. <br>
+      <b>Inversión:</b> Inversión estimada entre Bs 150 y 200 millones, cofinanciada por la Gobernación. <br>
+      </p>
+      <button class="btn" onclick="toggleInfo(this)">Ver más</button>
+      <div class="info-extra">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPUESTA 8 -->
+  <div class="propuesta-card">
+    <h3 class="propuesta-titulo">TERMINAL LOGISTICA FRONTERIZA</h3>
+    <div>
+      <!-- Si quieres VIDEO de Drive, usa esto -->
+      <!--
+      <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/ID_DEL_VIDEO/preview" allowfullscreen></iframe>
+      </div>
+      -->
+      <!-- Imagen -->
+      <img src="imagenes/propuestas/av_circunvalacion.png">
+    </div>
+    <div class="propuesta-info">
+      <p>
+      <b>Antecedente:</b> La entrada constante de buses al centro urbano genera contaminación, accidentes y un desgaste prematuro de las vías céntricas. <br>
+      <b>Propuesta:</b> Infraestructura complementaria a la terminal que incluye depósitos para carga, parqueo techado para 100 buses y lavaderos automatizados.<br>
+      <b>Impacto: </b> Reducción del 70% del tráfico de buses pesados en el área urbana. <br>
+      <b>Inversión:</b> Inversión de Bs 18.5 millones, con un 95% cubierto por el Tesoro General de la Nación. <br>
+      </p>
+      <button class="btn" onclick="toggleInfo(this)">Ver más</button>
+      <div class="info-extra">
+        
+      </div>
+    </div>
+  </div>
+
+  <!-- PROPUESTA 9 -->
+  <div class="propuesta-card">
+    <h3 class="propuesta-titulo">PRODUCCION E INDUSTRALIZACION LOCAL</h3>
+    <div>
+      <!-- Si quieres VIDEO de Drive, usa esto -->
+      <!--
+      <div class="video-container">
+        <iframe src="https://drive.google.com/file/d/ID_DEL_VIDEO/preview" allowfullscreen></iframe>
+      </div>
+      -->
+      <!-- Imagen -->
+      <img src="imagenes/propuestas/av_circunvalacion.png">
+    </div>
+    <div class="propuesta-info">
+      <p>
+      <b>Antecedente: </b> La economía local depende de la venta de materia prima sin procesar, lo que limita los ingresos de los productores de semillas, frutas y ganado. <br>
+      <b>Propuesta:</b> Fomento al desarrollo productivo sostenible mediante la industrialización de materia prima y el acceso a mercados nacionales.<br>
+      <b>Impacto: </b> Generación de 500 empleos directos en 2 años y aumento del 30% en los ingresos de las familias rurales. <br>
+      <b>Beneficio:</b> Apoyo técnico en semillas certificadas, fruticultura, ganadería, alfarería y artesanías. <br>
+      </p>
+      <button class="btn" onclick="toggleInfo(this)">Ver más</button>
+      <div class="info-extra">
+        
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===== FORMULARIO ===== -->
+<section class="cta" id="participa">
+<h2>Tu voz es importante</h2>
+
+<form class="proposal-form" id="proposalForm">
+  <div class="form-group">
+    <label>Nombre</label>
+    <input name="nombre" required>
+  </div>
+
+  <div class="form-group">
+    <label>Barrio</label>
+    <input name="barrio" required>
+  </div>
+
+  <div class="form-group">
+    <label>Celular</label>
+    <input name="celular" required>
+  </div>
+
+  <div class="form-group">
+    <label>Propuesta</label>
+    <textarea name="propuesta" required></textarea>
+  </div>
+
+  <button class="btn">Enviar propuesta</button>
+</form>
+</section>
+
+<footer>© 2025 Partido Político</footer>
+
+<script>
+function toggleInfo(btn){
+  const info = btn.nextElementSibling;
+  info.style.display = info.style.display === "block" ? "none" : "block";
+}
+
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('navLinks');
+hamburger.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+</script>
+
+</body>
+</html>
