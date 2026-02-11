@@ -486,9 +486,10 @@ footer{
 <!-- ===== FORMULARIO ===== -->
 <section class="cta" id="participa">
 <h2>Tu voz es importante</h2>
+<p>Participa y ayúdanos a construir el futuro</p>
 
 <form class="proposal-form" id="proposalForm">
-  <div class="form-group">
+   <div class="form-group">
     <label>Nombre</label>
     <input name="nombre" required>
   </div>
@@ -504,24 +505,67 @@ footer{
   </div>
 
   <div class="form-group">
+    <label>Correo (opcional)</label>
+    <input type="email" name="correo">
+  </div>
+
+  <div class="form-group">
     <label>Propuesta</label>
     <textarea name="propuesta" required></textarea>
   </div>
-
-  <button class="btn">Enviar propuesta</button>
+  <button class="btn btn-primary">Enviar propuesta</button>
 </form>
 </section>
 
 <footer>© 2025 Partido Político</footer>
 
-<script>
-function toggleInfo(btn){
-  const info = btn.nextElementSibling;
-  info.style.display = info.style.display === "block" ? "none" : "block";
-}
+<div class="thank-you-popup" id="thankYouPopup">
+  <div class="popup-content">
+    <h3>¡Gracias por tu apoyo!</h3>
+    <p>Tu propuesta fue enviada correctamente.</p>
+  </div>
+</div>
 
+<script>
+const form = document.getElementById('proposalForm');
+const popup = document.getElementById('thankYouPopup');
+
+form.addEventListener('submit', async function (e) {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  try {
+    const response = await fetch(
+      "https://hook.eu1.make.com/4535p36b7lkyxar64ykwhg1qqsfywtez",
+      {
+        method: "POST",
+        body: formData
+      }
+    );
+
+    if (response.ok) {
+      popup.style.display = "flex";
+
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 5000);
+
+      form.reset();
+    } else {
+      alert("Error al enviar la propuesta. Intente nuevamente.");
+    }
+
+  } catch (error) {
+    alert("No se pudo conectar. Revise su conexión.");
+  }
+});
+</script>
+
+<script>
 const hamburger = document.getElementById('hamburger');
 const navLinks = document.getElementById('navLinks');
+
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
