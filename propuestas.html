@@ -69,8 +69,8 @@ header{
 .propuestas h2{
   text-align:center;
   font-size:2.4rem;
-  margin-bottom:3rem;
-  color:#0b3c5d;
+  margin-bottom: 1rem;
+  color:#e20606;
 }
 
 /* CARD */
@@ -90,7 +90,7 @@ header{
   grid-column:1 / -1;
   text-align:center;
   font-size:1.5rem;
-  color:#0b3c5d;
+  color:#ff0800;
   margin-bottom:1rem;
 }
 
@@ -187,6 +187,35 @@ footer{
   padding:1.2rem;
 }
 
+/* POPUP */
+.thank-you-popup{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none; /* 🔴 oculto por defecto */
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.popup-content{
+  background: #fff;
+  padding: 2rem 2.5rem;
+  border-radius: 14px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.popup-content h3{
+  color: #ff0000;
+  margin-bottom: .5rem;
+}
+
+
 /* RESPONSIVE */
 @media(max-width:768px){
   .log{ width:190px; }
@@ -213,6 +242,19 @@ footer{
   .propuesta-card{
     grid-template-columns:1fr;
   }
+
+  .propuestas h2{
+  text-align:center;
+  font-size:  20pt;;
+  margin-bottom:3rem;
+  color:#0b3c5d;
+  }
+  .propuestas h3{
+  text-align:center;
+  font-size:  15pt;;
+  color:#0b3c5d;
+  }
+
 }
 </style>
 </head>
@@ -255,13 +297,9 @@ footer{
       </p>
       <button class="btn" onclick="toggleInfo(this)">Ver más</button>
       <div class="info-extra">
-        <strong>Alcance Técnico:</strong><br>
-        Pavimentación reforzada para tránsito pesado, drenaje pluvial,
-        alumbrado LED cada 25 m.<br><br>
-        <strong>Impacto:</strong><br>
-        Reducción del tráfico pesado en el centro urbano,
-        mejora de seguridad vial, generación de empleo
-        y aumento de la plusvalía barrial.
+        <strong>Costo de Inversión:</strong><br> Se estima un total de $245,000 USD para la ejecución completa.
+        <strong>Distribución del Gasto:</strong><br> $120,000 para el sistema Mojo y $100,000 para el sistema Toroara, más estudios y pruebas.<br>
+        <strong>Fuentes de Fondos:</strong><br> Fondos municipales, Ministerio de Medio Ambiente y Agua, y cooperación internacional como el BID.
       </div>
     </div>
   </div>
@@ -276,7 +314,7 @@ footer{
       </div>
       -->
       <!-- Imagen -->
-      <img src="imagenes/propuesta 1.png">
+      <img src="imagenes/propuesta 2.png">
     </div>
     <div class="propuesta-info">
       <p>
@@ -287,7 +325,11 @@ footer{
       </p>
       <button class="btn" onclick="toggleInfo(this)">Ver más</button>
       <div class="info-extra">
-        
+        <strong>Presupuesto Urbano:</strong><br> El costo de renovación y ampliación se estima entre Bs 120-150 millones. <br>
+        <strong>Presupuesto Rural:</strong><br>
+         Se financiará a través del POA 2026 de la Gobernación de Potosí, que cuenta con una asignación de Bs 1,113 millones para inversión en infraestructura. <br>
+        <strong>Inversión en Desarrollo: </strong><br>
+        Se contempla un 3% del presupuesto para capacitación y desarrollo comunitario.
       </div>
     </div>
   </div>
@@ -303,7 +345,7 @@ footer{
       </div>
       -->
       <!-- Imagen -->
-      <img src="imagenes/propuestas/av_circunvalacion.png">
+      <img src="imagenes/propuesta 3.png">
     </div>
     <div class="propuesta-info">
       <p>
@@ -314,7 +356,10 @@ footer{
       </p>
       <button class="btn" onclick="toggleInfo(this)">Ver más</button>
       <div class="info-extra">
-        
+        <strong>Alcance:</strong> <br>
+        Construcción de un estadio municipal para 25,000 personas, coliseo reglamentario de Futsal y refacción de complejos barriales. <br>
+        <strong>Económico:</strong> <br>
+        Generación de empleo local durante la fase de obras y fomento al turismo deportivo.
       </div>
     </div>
   </div>
@@ -330,7 +375,7 @@ footer{
       </div>
       -->
       <!-- Imagen -->
-      <img src="imagenes/propuestas/av_circunvalacion.png">
+      <img src="imagenes/propuesta 4.png">
     </div>
     <div class="propuesta-info">
       <p>
@@ -341,7 +386,12 @@ footer{
       </p>
       <button class="btn" onclick="toggleInfo(this)">Ver más</button>
       <div class="info-extra">
-        
+        <strong>Costo del Proyecto: </strong> <br>
+        Se estima entre Bs 5 y 7 millones. <br>
+        <strong>Estructura Financiera:</strong> <br>
+        90% mediante financiamiento externo (Ministerio de Obras Públicas, CAF o BID) y solo un 10% de contraparte municipal. <br>
+        <strong>Ahorro Operativo: </strong> <br>
+        El uso de tecnología solar y LED reduce los costos de mantenimiento y energía en un 70% anual. <br>
       </div>
     </div>
   </div>
@@ -357,7 +407,7 @@ footer{
       </div>
       -->
       <!-- Imagen -->
-      <img src="imagenes/propuestas/av_circunvalacion.png">
+      <img src="imagenes/propuesta 5.png">
     </div>
     <div class="propuesta-info">
       <p>
@@ -368,7 +418,12 @@ footer{
       </p>
       <button class="btn" onclick="toggleInfo(this)">Ver más</button>
       <div class="info-extra">
-        
+        <strong>Meta de Empleo:</strong> <br>
+        Generación de 500 empleos directos en un periodo de 2 años.
+        <strong>Impacto Familiar:</strong> <br>
+        Se proyecta un aumento del 30% en los ingresos de las familias productoras. <br>
+        <strong>Centros de Acopio:</strong> <br>
+        Instalación de 2 centros de procesamiento e industrialización durante el primer año.
       </div>
     </div>
   </div>
@@ -384,7 +439,7 @@ footer{
       </div>
       -->
       <!-- Imagen -->
-      <img src="imagenes/propuestas/av_circunvalacion.png">
+      <img src="imagenes/propuesta 6.png">
     </div>
     <div class="propuesta-info">
       <p>
@@ -395,7 +450,12 @@ footer{
       </p>
       <button class="btn" onclick="toggleInfo(this)">Ver más</button>
       <div class="info-extra">
-        
+        <strong>Costo Estimado: </strong> <br>
+        La inversión es de Bs 3.3 millones. <br>
+        <strong>Desglose Técnico: </strong> <br>
+        Bs 800,000 para perforación de pozos, Bs 1.2 millones en bombeo solar y Bs 1 millón en redes de distribución. <br>
+        <strong>Contraparte: </strong> <br>
+        El municipio cubrirá entre el 20% y 30% del costo total.
       </div>
     </div>
   </div>
@@ -411,7 +471,7 @@ footer{
       </div>
       -->
       <!-- Imagen -->
-      <img src="imagenes/propuestas/av_circunvalacion.png">
+      <img src="imagenes/propuesta 7.png">
     </div>
     <div class="propuesta-info">
       <p>
@@ -422,7 +482,12 @@ footer{
       </p>
       <button class="btn" onclick="toggleInfo(this)">Ver más</button>
       <div class="info-extra">
-        
+        <strong>Costo Total: </strong> <br>
+        Se proyecta entre Bs 150 y 200 millones. <br>
+        <strong>Inversión por Kilómetro: </strong> <br>
+        El cálculo se basa en un costo aproximado de Bs 10-15 millones por km. <br>
+        <strong>Financiamiento: </strong> <br>
+        83% a cargo de la Gobernación de Potosí y 13% de recursos municipales. 
       </div>
     </div>
   </div>
@@ -438,7 +503,7 @@ footer{
       </div>
       -->
       <!-- Imagen -->
-      <img src="imagenes/propuestas/av_circunvalacion.png">
+      <img src="imagenes/propuesta 8.png">
     </div>
     <div class="propuesta-info">
       <p>
@@ -449,37 +514,15 @@ footer{
       </p>
       <button class="btn" onclick="toggleInfo(this)">Ver más</button>
       <div class="info-extra">
-        
+        <strong>Presupuesto de Obra:</strong> <br>
+        El costo total de la infraestructura complementaria es de Bs 18,500,000. <br>
+        <strong>Inversión por Componente:</strong> <br>
+        Bs 6 millones para depósitos, Bs 8 millones para el parqueo y Bs 4.5 millones para el lavadero. <br> 
+        <strong>Financiamiento:</strong> <br> El 95% provendrá del Tesoro General de la Nación (TGN) y el 5% del GAM Villazón.
       </div>
     </div>
   </div>
 
-  <!-- PROPUESTA 9 -->
-  <div class="propuesta-card">
-    <h3 class="propuesta-titulo">PRODUCCION E INDUSTRALIZACION LOCAL</h3>
-    <div>
-      <!-- Si quieres VIDEO de Drive, usa esto -->
-      <!--
-      <div class="video-container">
-        <iframe src="https://drive.google.com/file/d/ID_DEL_VIDEO/preview" allowfullscreen></iframe>
-      </div>
-      -->
-      <!-- Imagen -->
-      <img src="imagenes/propuestas/av_circunvalacion.png">
-    </div>
-    <div class="propuesta-info">
-      <p>
-      <b>Antecedente: </b> La economía local depende de la venta de materia prima sin procesar, lo que limita los ingresos de los productores de semillas, frutas y ganado. <br>
-      <b>Propuesta:</b> Fomento al desarrollo productivo sostenible mediante la industrialización de materia prima y el acceso a mercados nacionales.<br>
-      <b>Impacto: </b> Generación de 500 empleos directos en 2 años y aumento del 30% en los ingresos de las familias rurales. <br>
-      <b>Beneficio:</b> Apoyo técnico en semillas certificadas, fruticultura, ganadería, alfarería y artesanías. <br>
-      </p>
-      <button class="btn" onclick="toggleInfo(this)">Ver más</button>
-      <div class="info-extra">
-        
-      </div>
-    </div>
-  </div>
 
 </section>
 
@@ -569,6 +612,19 @@ const navLinks = document.getElementById('navLinks');
 hamburger.addEventListener('click', () => {
   navLinks.classList.toggle('active');
 });
+</script>
+<script>
+function toggleInfo(button) {
+  const infoExtra = button.nextElementSibling;
+
+  if (infoExtra.style.display === "block") {
+    infoExtra.style.display = "none";
+    button.textContent = "Ver más";
+  } else {
+    infoExtra.style.display = "block";
+    button.textContent = "Ver menos";
+  }
+}
 </script>
 
 </body>
